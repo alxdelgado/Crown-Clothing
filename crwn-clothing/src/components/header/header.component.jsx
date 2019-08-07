@@ -6,7 +6,8 @@ import { connect } from 'react-redux'; // higher order component that lets us mo
 
 import { auth } from '../../firebase/firebase.utils';
 
-import CartIcon from '../cart-icon/car-icon.component';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component'; 
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
@@ -33,7 +34,8 @@ const Header = ({ currentUser }) => (
             }
 
             <CartIcon />
-        </div>
+            <CartDropdown />
+        </div> 
     </div>
 );
 
