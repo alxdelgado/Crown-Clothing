@@ -1,7 +1,13 @@
 import React from 'react'; 
+
 import { Link } from 'react-router-dom';
-import { auth } from '../../firebase/firebase.utils'; 
-import { ReactComponent as Logo } from '../../assets/crown.svg';  
+
+import { connect } from 'react-redux'; // higher order component that lets us modify our component to have access to things related to redux. 
+
+import { auth } from '../../firebase/firebase.utils';
+
+import { ReactComponent as Logo } from '../../assets/crown.svg';
+
 import './header.styles.scss'; 
 
 const Header = ({ currentUser }) => (
@@ -26,5 +32,9 @@ const Header = ({ currentUser }) => (
     </div>
 );
 
-export default Header; 
+const mapStateToProps = state => ({ // 'state' is the top level root-reducer
+    currentUser: state.user.currentUser // pass the currentUser prop and the value is referencing the root-reducer which takes the value 'userReducer' and from there we get the currentUser value (located in userReducer). 
+});
+
+export default connect(mapStateToProps)(Header); // connect method = returns another juiced up header component. 
 
