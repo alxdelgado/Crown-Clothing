@@ -13,7 +13,7 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss'; 
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
     <div className='header'>
         <Link className='logo-container' to='/'>
             <Logo className='logo' />
@@ -34,13 +34,14 @@ const Header = ({ currentUser }) => (
             }
 
             <CartIcon />
-            <CartDropdown />
+            {hidden ? null: <CartDropdown />}
         </div> 
     </div>
 );
 
-const mapStateToProps = state => ({ // 'state' is the top level root-reducer
-    currentUser: state.user.currentUser // pass the currentUser prop and the value is referencing the root-reducer which takes the value 'userReducer' and from there we get the currentUser value (located in userReducer). 
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({ // 'state' is the top level root-reducer
+    currentUser, // pass the currentUser prop and the value is referencing the root-reducer which takes the value 'userReducer' and from there we get the currentUser value (located in userReducer).
+    hidden 
 });
 
 export default connect(mapStateToProps)(Header); // connect method = returns another juiced up header component. 
