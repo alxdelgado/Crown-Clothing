@@ -6,6 +6,8 @@ import { connect } from 'react-redux'; // higher order component that lets us mo
 
 import { auth } from '../../firebase/firebase.utils';
 
+import CartIcon from '../cart-icon/car-icon.component';
+
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss'; 
@@ -22,12 +24,15 @@ const Header = ({ currentUser }) => (
             <Link className='option' to='/shop'>
                 CONTACT
             </Link>
+            
             {
                 currentUser ?
                 <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
                 :
                 <Link className='option' to='/signin'>SIGN IN</Link>
             }
+
+            <CartIcon />
         </div>
     </div>
 );
