@@ -39,6 +39,7 @@ class App extends React.Component {
     })
   };
 
+  // Will log the user out of the app 
   componentWillUnmount() {
     this.unsubscribeFromAuth(); 
   }
