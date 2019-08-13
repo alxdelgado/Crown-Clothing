@@ -25,6 +25,7 @@
 
 // export default cartReducer;
 
+// Cart Reducer 
 import CartActionTypes from './cart.types';
 import { addItemToCart } from './cart.utils';
 
