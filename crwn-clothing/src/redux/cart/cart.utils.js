@@ -1,16 +1,16 @@
 // inside of here we can add any utility functions related to our cart redux code 
 
-export const addItemToCart = (cartItems, cartItemsToAdd) => {
+export const addItemToCart = (cartItems, cartItemToAdd) => {
     const existingCartItem = cartItems.find(
-        cartItem => cartItem.id === cartItemsToAdd.id
+        cartItem => cartItem.id === cartItemToAdd.id
     );
 
     if(existingCartItem) {
         return cartItems.map(cartItem => 
-            cartItem.id === cartItemsToAdd.id
+            cartItem.id === cartItemToAdd.id
                 ? { ...cartItem, quantity: cartItem.quantity + 1 }
                 : cartItem
             )
     }
-    return [...cartItems, { ...cartItemsToAdd, quantity: 1 }];
+    return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 }; 
