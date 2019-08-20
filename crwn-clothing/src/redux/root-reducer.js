@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage'; // we will get the actual local
 
 import userReducer from './user/user.reducer'; // always add your reducers to the 'root-reducer'.
 import cartReducer from './cart/cart.reducer';
+import directoryReducer from './directory/directory.reducer'; 
 
 // This is the JSON object that respresents the possible configurations we want redux persist to use 
 const persistConfig = {
@@ -15,7 +16,9 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     user: userReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    directory: directoryReducer
+
 });
 
 
