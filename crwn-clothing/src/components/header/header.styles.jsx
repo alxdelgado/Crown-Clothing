@@ -24,7 +24,6 @@ export const OptionsContainer = styled.div`
     justify-content: flex-end;
 `;
 
-// Used string interpolation to pass in our global block of CSS
 export const OptionLink = styled(Link)`
     padding: 10px 15px;
     cursor: pointer; 
