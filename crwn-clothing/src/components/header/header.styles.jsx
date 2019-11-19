@@ -1,11 +1,5 @@
-import styled, { css } from 'styled-components'; 
+import styled from 'styled-components'; 
 import { Link } from 'react-router-dom';
-
-// css library - allows us to write a block of CSS and pass in and render into any of our components. 
-const OptionContainerStyles = css`
-    padding: 10px 15px;
-    cursor: pointer; 
-`; 
 
 export const HeaderContainer = styled.div`
     height: 70px;
@@ -32,9 +26,6 @@ export const OptionsContainer = styled.div`
 
 // Used string interpolation to pass in our global block of CSS
 export const OptionLink = styled(Link)`
-    ${OptionContainerStyles} 
+    padding: 10px 15px;
+    cursor: pointer; 
 `; 
-
-export const OptionDiv = styled.div`
-    ${OptionContainerStyles}
-`;

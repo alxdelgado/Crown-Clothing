@@ -1,7 +1,5 @@
 import React from 'react'; 
 
-// import { Link } from 'react-router-dom';
-
 import { connect } from 'react-redux'; // higher order component that lets us modify our component to have access to things related to redux. 
 import { createStructuredSelector } from 'reselect'; 
 
@@ -20,8 +18,7 @@ import {
     HeaderContainer, 
     LogoContainer, 
     OptionsContainer, 
-    OptionLink, 
-    OptionDiv
+    OptionLink
 } from './header.styles';
 
 const Header = ({ currentUser, hidden }) => (
@@ -39,7 +36,7 @@ const Header = ({ currentUser, hidden }) => (
             
             {
                 currentUser ?
-                <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
+                <OptionLink as='div' onClick={() => auth.signOut()}>SIGN OUT</OptionLink>
                 :
                 <OptionLink to='/signin'>SIGN IN</OptionLink>
             }
